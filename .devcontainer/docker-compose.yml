@@ -1,11 +1,6 @@
-volumes:
-  node_modules:
-
-
 services:
   app:
     image: mcr.microsoft.com/devcontainers/typescript-node:24-trixie
     volumes:
-      - ..:/workspaces/aeris-lang.org:cached
-      - node_modules:/workspaces/aeris-lang.org/node_modules:cached
+      - ..:/workspaces/aeris-lang.org
     command: sleep infinity
