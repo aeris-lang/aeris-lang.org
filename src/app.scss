@@ -1,0 +1,51 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@mixin dark-theme {
+  --color-bg: #000000;
+  --color-accent: #ffffff;
+  --color-text: #e0e0e0;
+  --color-subtext: #aaaaaa;
+  --color-line: #333333;
+}
+
+@mixin light-theme {
+  --color-bg: #ffffff;
+  --color-accent: #000000;
+  --color-text: #1a1a1a;
+  --color-subtext: #666666;
+  --color-line: #e0e0e0;
+}
+
+:root {
+  @include dark-theme;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include dark-theme;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    @include light-theme;
+  }
+}
+
+:root[data-theme="dark"] {
+  @include dark-theme;
+}
+
+:root[data-theme="light"] {
+  @include light-theme;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Roboto", sans-serif;
+}
