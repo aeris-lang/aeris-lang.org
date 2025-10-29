@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { asset } from "$app/paths";
-
   import "@unocss/reset/tailwind.css";
   import "virtual:uno.css";
-  import "../app.scss";
 
-  const lightIconURL = asset("/lettermark-light.svg");
-  const darkIconURL = asset("/lettermark-dark.svg");
+  import { asset } from "$app/paths";
+
+  const iconLight = asset("/lettermark-light.svg");
+  const iconDark = asset("/lettermark-dark.svg");
   const iconLinkProps = {
     rel: "icon",
     type: "image/svg+xml",
@@ -16,9 +15,9 @@
 <svelte:head>
   <title>AERIS</title>
   <meta name="description" content="AERIS Programming Language Platform" />
-  <link {...iconLinkProps} href={lightIconURL} />
-  <link {...iconLinkProps} href={lightIconURL} media="(prefers-color-scheme: dark)" />
-  <link {...iconLinkProps} href={darkIconURL} media="(prefers-color-scheme: light)" />
+  <link {...iconLinkProps} href={iconLight} />
+  <link {...iconLinkProps} href={iconLight} media="(prefers-color-scheme: dark)" />
+  <link {...iconLinkProps} href={iconDark} media="(prefers-color-scheme: light)" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link
@@ -28,3 +27,27 @@
 </svelte:head>
 
 <slot />
+
+<style lang="scss">
+  :global {
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    :root {
+      --color-bg: #000000;
+      --color-accent: #ffffff;
+      --color-text: #e0e0e0;
+      --color-subtext: #aaaaaa;
+      --color-line: #333333;
+    }
+
+    html {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: "Roboto", sans-serif;
+    }
+  }
+</style>

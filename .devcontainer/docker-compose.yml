@@ -1,6 +1,0 @@
-services:
-  app:
-    image: mcr.microsoft.com/devcontainers/typescript-node:24-trixie
-    volumes:
-      - ..:/workspaces/aeris-lang.org
-    command: sleep infinity
