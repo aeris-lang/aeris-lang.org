@@ -1,35 +1,127 @@
 <script lang="ts">
-  import Svg from "$/lib/components/Svg.svelte";
-  import icon from "$lib/assets/lettermark.svg?raw";
+  import Lettermark from "$/lib/components/Lettermark.svelte";
+  import Wordmark from "$/lib/components/Wordmark.svelte";
 </script>
 
-<div class="container">
-  <header></header>
-  <main>
-    <Svg svg={icon} />
-  </main>
-  <footer></footer>
-</div>
+<header class="header">
+  <div class="content">
+    <a class="homepage-anchor" href="/">
+      <Wordmark />
+    </a>
+    <nav class="nav">
+      <a href="https://github.com/aeris-lang">GitHub</a>
+    </nav>
+  </div>
+</header>
+<main class="main">
+  <div class="content">
+    <section class="intro">
+      <aside class="lettermark">
+        <Lettermark />
+      </aside>
+      <main>
+        <div class="description">
+          <h1>AERIS</h1>
+          <h2>
+            <span>Next Generation Programming</span>
+            <span>Language Platform</span>
+          </h2>
+        </div>
+        <nav>
+          <a href="/standard">AERIS Standard</a>
+          <a href="https://github.com/aeris-lang">GitHub</a>
+        </nav>
+      </main>
+    </section>
+  </div>
+</main>
+<footer class="footer"></footer>
 
 <style lang="scss">
-  .container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  header {
+  .header {
     position: sticky;
     top: 0;
-    height: 5rem;
-    background-color: color-mix(in hsl, var(--color-bg) 60%, transparent);
-    backdrop-filter: blur(3px);
+    background-color: rgb(from var(--color-bg) r g b / 0.6);
+    backdrop-filter: blur(4px);
     border-bottom: 1px solid var(--color-line);
   }
 
-  main {
+  .header > .content {
+    max-width: 1200px;
+    box-sizing: content-box;
+    height: 1.4rem;
+    padding: 1rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  footer {
+  .homepage-anchor {
+    flex-shrink: 0;
+    height: 100%;
+    display: block;
+    color: var(--color-accent);
+  }
+
+  .nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav > a {
+    height: 100%;
+    display: block;
+    transition: 300ms ease-out;
+
+    &:not(:hover) {
+      color: var(--color-subtext);
+    }
+  }
+
+  .main {
+    flex: 1;
+  }
+
+  .main > .content {
+    max-width: 1200px;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  .intro {
+    height: 60vh;
+    padding: 6rem 0;
+    display: flex;
+    color: var(--color-accent);
+  }
+
+  .lettermark {
+    width: 300px;
+  }
+
+  .description {
+    padding: 2rem 0;
+
+    & > h1 {
+      font-size: 8rem;
+      line-height: 8rem;
+      font-weight: bold;
+    }
+
+    & > h2 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      font-weight: bold;
+
+      & > span {
+        display: block;
+      }
+    }
+  }
+
+  .footer {
   }
 </style>

@@ -1,23 +1,19 @@
 <script lang="ts">
-  import "@unocss/reset/tailwind.css";
-  import "virtual:uno.css";
+  import "tailwindcss/preflight.css";
 
   import { asset } from "$app/paths";
-
-  const iconLight = asset("/lettermark-light.svg");
-  const iconDark = asset("/lettermark-dark.svg");
-  const iconLinkProps = {
-    rel: "icon",
-    type: "image/svg+xml",
-  };
 </script>
 
 <svelte:head>
   <title>AERIS</title>
   <meta name="description" content="AERIS Programming Language Platform" />
-  <link {...iconLinkProps} href={iconLight} />
-  <link {...iconLinkProps} href={iconLight} media="(prefers-color-scheme: dark)" />
-  <link {...iconLinkProps} href={iconDark} media="(prefers-color-scheme: light)" />
+  <link rel="icon" type="image/svg+xml" href={asset("/lettermark-light.svg")} />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href={asset("/lettermark-dark.svg")}
+    media="(prefers-color-scheme: light)"
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link

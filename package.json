@@ -13,9 +13,8 @@
     "lint": "prettier --check . && eslint ."
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.1",
     "@inlang/paraglide-js": "^2.4",
-    "@unocss/reset": "^66.1",
+    "tailwindcss": "^4.1",
     "tslib": "^2.8"
   },
   "devDependencies": {
@@ -26,11 +25,9 @@
     "@sveltejs/adapter-static": "^3.0",
     "@sveltejs/kit": "^2.48",
     "@sveltejs/vite-plugin-svelte": "^6.2",
-    "@unocss/eslint-config": "^66.5",
-    "@unocss/extractor-svelte": "^66.5",
     "eslint": "^9.38",
     "eslint-config-prettier": "^10.1",
-    "eslint-plugin-svelte": "^3.12",
+    "eslint-plugin-svelte": "^3.13",
     "globals": "^16.4",
     "jiti": "^2.6",
     "mdsvex": "^0.12",
@@ -41,7 +38,6 @@
     "svelte-check": "^4.3",
     "typescript": "^5.9",
     "typescript-eslint": "^8.46",
-    "unocss": "^66.5",
     "vite": "^7.1"
   }
 }
