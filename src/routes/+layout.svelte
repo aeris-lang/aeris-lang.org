@@ -5,13 +5,13 @@
 </script>
 
 <svelte:head>
-  <title>AERIS</title>
+  <title>AERIS - Next Generation Programming Language Platform</title>
   <meta name="description" content="AERIS Programming Language Platform" />
-  <link rel="icon" type="image/svg+xml" href={asset("/lettermark-light.svg")} />
+  <link rel="icon" type="image/svg+xml" href={asset("/aeris-lettermark-light.svg")} />
   <link
     rel="icon"
     type="image/svg+xml"
-    href={asset("/lettermark-dark.svg")}
+    href={asset("/aeris-lettermark-dark.svg")}
     media="(prefers-color-scheme: light)"
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,12 +26,6 @@
 
 <style lang="scss">
   :global {
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
     :root {
       --color-bg: #000000;
       --color-accent: #ffffff;
