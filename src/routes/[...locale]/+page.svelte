@@ -1,6 +1,6 @@
 <script lang="ts">
-  import exampleCode from "$lib/assets/example.aeris?raw";
   import Lettermark from "$lib/components/Lettermark.svelte";
+  import SampleCode from "$lib/components/SampleCode.svelte";
   import { m } from "$lib/paraglide/messages";
 </script>
 
@@ -27,11 +27,7 @@
       </nav>
     </div>
     <div>
-      <pre><code>{exampleCode}</code></pre>
-      <kbd>world</kbd>
-      <samp>Hello world from AERIS!</samp>
-      <kbd>verylongname</kbd>
-      <samp>Name is too long!</samp>
+      <SampleCode />
     </div>
   </section>
   <section class="about"></section>
@@ -100,7 +96,7 @@
       span {
         font-size: 4rem;
         font-weight: 700;
-        background: linear-gradient(to top, var(--color-line) 0%, var(--color-accent) 50%);
+        background: linear-gradient(to top, var(--color-subtext) 0%, var(--color-accent) 50%);
         background-clip: text;
         color: transparent;
       }
