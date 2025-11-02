@@ -6,8 +6,9 @@ export default defineConfig({
   plugins: [
     sveltekit(),
     paraglideVitePlugin({
-      project: "./paraglide",
-      outdir: "./src/generated/paraglide",
+      project: "./project.inlang",
+      outdir: "./src/lib/paraglide",
+      strategy: ["url"],
     }),
   ],
 });

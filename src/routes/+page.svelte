@@ -1,5 +1,7 @@
 <script lang="ts">
+  import exampleCode from "$lib/assets/example.aeris?raw";
   import Lettermark from "$lib/components/Lettermark.svelte";
+  import { m } from "$lib/paraglide/messages";
 </script>
 
 <header class="header">
@@ -7,27 +9,32 @@
     <Lettermark />
   </a>
   <nav class="nav-bar">
-    <a href="https://github.com/aeris-lang">GitHub</a>
+    <a href="https://github.com/aeris-lang/aeris">{m.github()}</a>
   </nav>
 </header>
 <main>
   <section class="intro">
     <div>
-      <h1>
-        <span>Next Generation</span>
-        <span>Programming Language</span>
-        <span>Platform</span>
-      </h1>
-      <p>AERIS is a infrastructure helps you to build artificial language.</p>
-      <p>Build your own language or use AERIS Standard, a powerful language provided by AERIS.</p>
-    </div>
-    <div>
-      <nav class="nav">
-        <a href="/standard">AERIS Standard</a>
-        <a href="https://github.com/aeris-lang">GitHub</a>
+      <div class="desc">
+        <h1>
+          <span>{m.home_intro_h1_1()}</span>
+          <span>{m.home_intro_h1_2()}</span>
+        </h1>
+        <h2>{m.home_intro_h2()}</h2>
+      </div>
+      <nav>
+        <a href="/">{m.home_intro_get_started()}</a>
       </nav>
     </div>
+    <div>
+      <pre><code>{exampleCode}</code></pre>
+      <kbd>world</kbd>
+      <samp>Hello world from AERIS!</samp>
+      <kbd>verylongname</kbd>
+      <samp>Name is too long!</samp>
+    </div>
   </section>
+  <section class="about"></section>
 </main>
 <footer class="footer"></footer>
 
@@ -63,25 +70,78 @@
       height: 100%;
       display: block;
       transition: 300ms ease-out;
+      color: var(--color-subtext);
 
-      &:not(:hover) {
-        color: var(--color-subtext);
+      &:hover {
+        color: var(--color-accent);
       }
     }
   }
 
   .intro {
     padding: 10%;
-    text-align: center;
+    display: flex;
+    gap: 1rem;
+
+    .desc {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
 
     h1 {
-      font-size: 4rem;
-      line-height: 4.25rem;
-      font-weight: 900;
-      color: var(--color-accent);
+      width: max-content;
+      display: grid;
+      grid-template-rows: repeat(2, 4rem);
+      justify-content: flex-start;
+      align-items: center;
 
       span {
+        font-size: 4rem;
+        font-weight: 700;
+        background: linear-gradient(to top, var(--color-line) 0%, var(--color-accent) 50%);
+        background-clip: text;
+        color: transparent;
+      }
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+      font-weight: 600;
+      color: var(--color-subtext);
+    }
+
+    nav {
+      width: max-content;
+      display: flex;
+      gap: 1rem;
+
+      a {
+        font-size: 1rem;
+        line-height: 1rem;
+        padding: 0.8rem 1.5rem;
         display: block;
+        border-radius: 8px;
+        transition: 100ms ease-out;
+      }
+
+      a:first-child {
+        color: var(--color-bg);
+        background-color: var(--color-accent);
+
+        &:hover {
+          background-color: var(--color-text);
+        }
+      }
+
+      a:not(:first-child) {
+        border: 1px solid var(--color-line);
+
+        &:hover {
+          background-color: rgb(from var(--color-line) r g b / 0.4);
+        }
       }
     }
   }

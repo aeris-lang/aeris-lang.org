@@ -7,10 +7,6 @@ export default {
   preprocess: [vitePreprocess(), mdsvex()],
   kit: {
     adapter: adapter(),
-    alias: {
-      $: "./src",
-      $generated: "./src/generated",
-    },
   },
   extensions: [".svelte", ".svx"],
 };

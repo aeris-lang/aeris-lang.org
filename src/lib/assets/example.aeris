@@ -1,0 +1,17 @@
+// This code is a prototype and may change in the future.
+
+import std.io
+
+fn main() {
+  let name = io.read_line();
+  try {
+    print_hello(satisfy name);
+  } else {
+    println("Name is too long!");
+  }
+}
+
+fn print_hello(name: String) {
+  premise name.len() < 10;
+  println("Hello {name} from AERIS");
+}

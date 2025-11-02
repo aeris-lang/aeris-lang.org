@@ -5,20 +5,20 @@
 </script>
 
 <svelte:head>
-  <title>AERIS - Next Generation Programming Language Platform</title>
-  <meta name="description" content="AERIS Programming Language Platform" />
-  <link rel="icon" type="image/svg+xml" href={asset("/aeris-lettermark-light.svg")} />
+  <title>AERIS - Next Generation Programming Language</title>
+  <meta name="description" content="AERIS Programming Language" />
+  <link rel="icon" type="image/svg+xml" href={asset("/lettermark-light.svg")} />
   <link
     rel="icon"
     type="image/svg+xml"
-    href={asset("/aeris-lettermark-dark.svg")}
+    href={asset("/lettermark-dark.svg")}
     media="(prefers-color-scheme: light)"
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
   />
 </svelte:head>
 
@@ -37,7 +37,7 @@
     html {
       background-color: var(--color-bg);
       color: var(--color-text);
-      font-family: "Roboto", sans-serif;
+      font-family: "Inter", sans-serif;
     }
   }
 </style>
