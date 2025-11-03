@@ -7,6 +7,10 @@ export default {
   preprocess: [vitePreprocess(), mdsvex()],
   kit: {
     adapter: adapter(),
+    prerender: {
+      concurrency: 10,
+      origin: "https://aeris-lang.org",
+    },
   },
   extensions: [".svelte", ".svx"],
 };

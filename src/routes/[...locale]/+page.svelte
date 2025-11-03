@@ -5,7 +5,7 @@
 </script>
 
 <header class="header">
-  <a class="home-link" href="/">
+  <a class="home-link" href="/" aria-label="AERIS Lettermark">
     <Lettermark />
   </a>
   <nav class="nav-bar">

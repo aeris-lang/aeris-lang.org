@@ -71,7 +71,7 @@
 
 <style lang="scss">
   div {
-    border: 1px solid var(--color-text);
+    border: 1px solid var(--color-line);
   }
 
   code {

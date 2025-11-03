@@ -1,10 +1,8 @@
 import type { PageLoad } from "./$types";
 
-export { entries } from "$lib/locale-entries";
-
 export const load: PageLoad = () => {
   return {
-    title: "AERIS — Next Generation Programming Language",
+    title: "Page Not Found — AERIS",
     description: "AERIS Programming Language",
   };
 };
