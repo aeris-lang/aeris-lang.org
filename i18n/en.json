@@ -1,6 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "github": "GitHub",
+  "home_link_aria_label": "AERIS Lettermark",
   "home_intro_h1_1": "Next Generation",
   "home_intro_h1_2": "Programming Language",
   "home_intro_h2": "Fast, Strict, Flexible",

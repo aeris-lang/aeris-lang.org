@@ -1,5 +1,6 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "home_link_aria_label": "AERIS 레터마크",
   "home_intro_h1_1": "차세대",
   "home_intro_h1_2": "프로그래밍 언어",
   "home_intro_h2": "빠름, 엄격함, 유연함",

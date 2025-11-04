@@ -5,7 +5,7 @@
 </script>
 
 <header class="header">
-  <a class="home-link" href="/" aria-label="AERIS Lettermark">
+  <a class="home-link" href="/" aria-label={m.home_link_aria_label()}>
     <Lettermark />
   </a>
   <nav class="nav-bar">
@@ -30,7 +30,23 @@
       <SampleCode />
     </div>
   </section>
-  <section class="about"></section>
+  <section class="about">
+    <h1>Why AERIS?</h1>
+    <div>
+      <div>
+        <h2>Fast</h2>
+        <p></p>
+      </div>
+      <div>
+        <h2>Strict</h2>
+        <p></p>
+      </div>
+      <div>
+        <h2>Flexible</h2>
+        <p></p>
+      </div>
+    </div>
+  </section>
 </main>
 <footer class="footer"></footer>
 
@@ -67,6 +83,7 @@
       display: block;
       transition: 300ms ease-out;
       color: var(--color-subtext);
+      user-select: none;
 
       &:hover {
         color: var(--color-accent);
@@ -121,6 +138,7 @@
         display: block;
         border-radius: 8px;
         transition: 100ms ease-out;
+        user-select: none;
       }
 
       a:first-child {

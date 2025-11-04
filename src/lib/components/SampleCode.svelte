@@ -1,126 +1,122 @@
 <script lang="ts">
+  import Fn from "$lib/components/code/Fn.svelte";
+  import Id from "$lib/components/code/Id.svelte";
+  import In from "$lib/components/code/In.svelte";
+  import Kw from "$lib/components/code/Kw.svelte";
+  import Num from "$lib/components/code/Num.svelte";
+  import Str from "$lib/components/code/Str.svelte";
+  import Ty from "$lib/components/code/Ty.svelte";
+
   type State = "pending" | "blocking" | "running";
-  let pgState = $state<State>("pending");
+  let processState = $state<State>("pending");
   let input = $state<string>("");
   let output = $derived.by(() => {});
+
+  function handleRun() {
+    processState = "running";
+  }
 </script>
 
-<div>
-  <code>
+<div class="container">
+  <code class="code">
     <p>
-      <kw>import</kw>
-      <id>std<pc>.</pc>io</id>
+      <Kw l="import" />
+      <Id l="std" />.<Id l="io" />
     </p>
     <p></p>
     <p>
-      <kw>fn</kw>
-      <id>main</id><pc>()</pc>
-      <pc>{"{"}</pc>
+      <Kw l="fn" />
+      <Id l="main" />{"() {"}
     </p>
     <p>
-      {"  "}<kw>let</kw>
-      <id>name</id>
-      =
-      <id>io</id><pc>.</pc><fn>read_line</fn><pc>()</pc><pc>;</pc>
+      <In /><Kw l="let" />
+      <Id l="name" />{" = "}<Id l="io" />.<Fn l="read_line" />{"();"}
     </p>
     <p>
-      {"  "}<kw>try</kw>
-      <pc>{"{"}</pc>
+      <In /><Kw l="try" />
+      {"{"}
     </p>
     <p>
-      {"    "}<fn>print_hello</fn><pc>(</pc><kw>satisfy</kw>
-      <id>name</id><pc>)</pc><pc>;</pc>
+      <In /><In /><Fn l="print_hello" />(<Kw l="satisfy" />
+      <Id l="name" />){";"}
     </p>
     <p>
-      {"  "}<pc>{"}"}</pc>
-      <kw>else</kw>
-      <pc>{"{"}</pc>
+      <In />{"}"}
+      <Kw l="else" />
+      {"{"}
     </p>
-    <p>{"    "}<fn>println</fn><pc>(<st>"Name is too long!"</st>)</pc><pc>;</pc></p>
-    <p>{"  "}<pc>{"}"}</pc></p>
-    <p><pc>{"}"}</pc></p>
+    <p><In /><In /><Fn l="println" />{"("}<Str l={'"Name is too long!"'} />{");"}</p>
+    <p><In />{"}"}</p>
+    <p>{"}"}</p>
     <p></p>
     <p>
-      <kw>fn</kw>
-      <fn>print_hello</fn><pc>(<id>name</id><pc>:</pc></pc>
-      <ty>String</ty><pc>)</pc>
-      <pc>{"{"}</pc>
+      <Kw l="fn" />
+      <Fn l="print_hello" />{"("}<Id l="name" />:
+      <Ty l="String" />{") {"}
     </p>
     <p>
-      {"  "}<kw>premise</kw>
-      <id>name</id><pc>.</pc><fn>len</fn><pc>()</pc>
-      <pc>{"<"}</pc>
-      <nu>10</nu><pc>;</pc>
+      <In /><Kw l="premise" />
+      <Id l="name" />.<Fn l="len" />{"() < "}<Num n={10} />;
     </p>
     <p>
-      {"  "}<fn>println</fn><pc>(<st>"Hello <pc>{"{"}<id>name</id>{"}"}</pc> from AERIS!"</st>)</pc
-      ><pc>;</pc>
+      <In /><Fn l="println" />(<Str l={'"'} />{"{"}<Id l="name" />{"}"}<Str l={' from AERIS!"'} />);
     </p>
-    <p><pc>{"}"}</pc></p>
+    <p>{"}"}</p>
   </code>
-  <nav>
-    <button
-      >{#if pgState === "pending"}Run{:else}Running...{/if}</button
-    >
+  <nav class="controls">
+    {#if processState === "pending"}
+      <button onclick={handleRun}>Run</button>
+    {:else if processState === "blocking"}
+      <button disabled>Waiting for input...</button>
+    {:else if processState === "running"}
+      <button disabled>Running...</button>
+    {/if}
   </nav>
-  <svelte:element this={pgState !== "running" ? "kbd" : "samp"}>
-    {output}
-  </svelte:element>
+  <div class="console">
+    <samp class="output">
+      <div></div>
+      <textarea class="input" rows="1" bind:value={output}></textarea>
+    </samp>
+  </div>
 </div>
-<p>This code is a prototype and may change in the future.</p>
 
 <style lang="scss">
-  div {
+  .container {
     border: 1px solid var(--color-line);
   }
 
-  code {
+  .code {
     padding: 1rem;
     display: block;
     background-color: #1f1f1f;
+
+    p {
+      height: 1.2rem;
+      font-size: 1rem;
+      line-height: 1;
+      white-space: pre;
+      color: #cccccc;
+    }
   }
 
-  p {
-    height: 1.2rem;
-    font-size: 1rem;
-    line-height: 1;
-    white-space: pre;
+  .controls {
+    display: flex;
   }
 
-  kw {
-    color: #569cd6;
-  }
-
-  id {
-    color: #9cdcfe;
-  }
-
-  pc {
-    color: #cccccc;
-  }
-
-  fn {
-    color: #dcdcaa;
-  }
-
-  st {
-    color: #ce9178;
-  }
-
-  ty {
-    color: #4ec9b0;
-  }
-
-  nu {
-    color: #b5cea8;
-  }
-
-  kbd,
-  samp {
-    min-height: 30px;
-    box-sizing: content-box;
+  .console {
     padding: 1rem;
-    display: block;
     background-color: #181818;
+  }
+
+  .output {
+    display: block;
+    line-height: 1;
+  }
+
+  .input {
+    display: inline;
+    outline: none;
+    resize: none;
+    line-height: 1;
   }
 </style>

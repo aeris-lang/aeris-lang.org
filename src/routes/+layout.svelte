@@ -44,5 +44,10 @@
       color: var(--color-text);
       font-family: "Inter", sans-serif;
     }
+
+    ::selection {
+      background-color: var(--color-text);
+      color: var(--color-bg);
+    }
   }
 </style>
