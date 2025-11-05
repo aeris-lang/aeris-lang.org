@@ -25,7 +25,7 @@
 
   .content {
     font-size: max(1cqw, 0.6rem);
-    padding: 10em 0;
+    padding: 12em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,13 +63,14 @@
   }
 
   nav {
+    font-size: 1rem;
     display: flex;
     gap: 1em;
 
     a {
-      font-size: 0.8em;
+      font-size: 1em;
       line-height: 1;
-      padding: 0.8em 1.4em;
+      padding: 0.8em 1.6em;
       display: block;
       border-radius: 0.4em;
       transition: 100ms ease-out;
