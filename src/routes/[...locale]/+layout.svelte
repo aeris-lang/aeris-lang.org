@@ -1,25 +1,21 @@
 <script lang="ts">
   import { page } from "$app/state";
   import { baseLocale, locales, localizeHref } from "$lib/paraglide/runtime";
+  import { MetaTags } from "svelte-meta-tags";
 
   const { children } = $props();
 
-  const currentHref = page.url.href;
-  const localeAlternates = [
+  const { pathname, origin } = page.url;
+  const href = new URL(pathname, origin).href;
+  const languageAlternates = [
     ...locales.map((locale) => ({
-      hreflang: locale,
-      href: localizeHref(currentHref, { locale }),
+      hrefLang: locale,
+      href: localizeHref(href, { locale }),
     })),
-    { hreflang: "x-default", href: localizeHref(currentHref, { locale: baseLocale }) },
+    { hrefLang: "x-default", href: localizeHref(href, { locale: baseLocale }) },
   ];
 </script>
 
-<svelte:head>
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href={currentHref} />
-  {#each localeAlternates as { hreflang, href }}
-    <link rel="alternate" {hreflang} {href} />
-  {/each}
-</svelte:head>
+<MetaTags robots="index, follow" canonical={href} {languageAlternates} />
 
 {@render children()}

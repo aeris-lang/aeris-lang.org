@@ -1,5 +1,6 @@
 <script lang="ts">
   import { lines, type TokenType } from "$lib/assets/example";
+  import { m } from "$lib/paraglide/messages";
 
   const colorMap: Record<TokenType, string> = {
     comment: "#6A9955",
@@ -12,7 +13,7 @@
     number: "#B5CEA8",
   };
 
-  type State = "pending" | "blocking" | "running";
+  type State = "pending" | "running" | "blocking";
 
   let processState = $state<State>("pending");
   let input = $state<string>("");
@@ -63,13 +64,15 @@
       </samp>
       <nav class="controls">
         {#if processState === "pending"}
-          <button onclick={handleRun}>Run</button>
-        {:else if processState === "blocking"}
-          <button disabled>Waiting for input...</button>
+          <button onclick={handleRun}>{m.code_example_run()}</button>
         {:else if processState === "running"}
-          <button disabled>Running...</button>
+          <button disabled>{m.code_example_running()}</button>
+        {:else if processState === "blocking"}
+          <button disabled>{m.code_example_waiting_input()}</button>
         {/if}
-        <button disabled={processState === "pending"} onclick={handleStop}>Stop</button>
+        <button disabled={processState === "pending"} onclick={handleStop}
+          >{m.code_example_stop()}</button
+        >
       </nav>
     </div>
   </div>
@@ -80,15 +83,11 @@
     content: "";
     height: 2rem;
     display: block;
-    background: linear-gradient(
-      $direction,
-      rgb(from var(--color-bg) r g b / 0.3),
-      transparent 100%
-    );
+    background: linear-gradient($direction, var(--color-code-terminal-bg), transparent);
   }
 
   .container {
-    background-color: #1f1f1f;
+    background-color: var(--color-code-bg);
     &::before {
       @include gradient(to bottom);
     }
@@ -116,7 +115,6 @@
     font-family: "Inconsolata", monospace;
     font-size: 1rem;
     line-height: 1.5;
-    color: var(--color-text);
     user-select: none;
   }
 
@@ -125,8 +123,8 @@
     padding: 0 1rem;
     display: inline-block;
     text-align: right;
-    color: var(--color-subtext);
-    border-right: 2px solid var(--color-line);
+    color: var(--color-code-text-muted);
+    border-right: 2px solid var(--color-code-border);
   }
 
   .line-text {
@@ -137,7 +135,7 @@
   .side-panel {
     display: flex;
     flex-direction: column;
-    background-color: #181818;
+    background-color: var(--color-code-terminal-bg);
   }
 
   .output {
@@ -152,14 +150,14 @@
 
     button {
       padding: 0.4rem 0;
-      color: #ffffff;
+      color: var(--color-code-text);
 
       &:disabled {
-        color: #ffffff7f;
+        color: var(--color-code-text-muted);
       }
 
       &:enabled:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        outline: 1px solid var(--color-code-border);
       }
     }
   }

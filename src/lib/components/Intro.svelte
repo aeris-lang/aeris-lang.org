@@ -6,13 +6,13 @@
   <div class="content">
     <div class="desc">
       <h1>
-        <span>{m.home_intro_h1_1()}</span>
-        <span>{m.home_intro_h1_2()}</span>
+        <span>{m.intro_h1_1()}</span>
+        <span>{m.intro_h1_2()}</span>
       </h1>
-      <h2>{m.home_intro_h2()}</h2>
+      <h2>{m.intro_h2()}</h2>
     </div>
     <nav>
-      <a href="/">{m.home_intro_get_started()}</a>
+      <a href="/">{m.intro_get_started()}</a>
       <a href="/">Learn AERIS</a>
     </nav>
   </div>
@@ -49,7 +49,7 @@
     place-items: center;
 
     span {
-      background: linear-gradient(to top, var(--color-subtext) 0%, var(--color-accent) 50%);
+      background: linear-gradient(to top, var(--color-text-muted) 0%, var(--color-primary) 50%);
       background-clip: text;
       color: transparent;
     }
@@ -59,7 +59,7 @@
     font-size: 2.5em;
     line-height: 1;
     font-weight: 600;
-    color: var(--color-subtext);
+    color: var(--color-text-muted);
   }
 
   nav {
@@ -80,18 +80,18 @@
 
     a:first-child {
       color: var(--color-bg);
-      background-color: var(--color-accent);
+      background-color: var(--color-primary);
 
       &:hover {
-        background-color: var(--color-text);
+        background-color: rgb(from var(--color-primary) r g b / 0.9);
       }
     }
 
     a:not(:first-child) {
-      border: 1px solid var(--color-line);
+      border-width: 1px;
 
       &:hover {
-        background-color: rgb(from var(--color-line) r g b / 0.4);
+        background-color: rgb(from var(--color-primary) r g b / 0.1);
       }
     }
   }
