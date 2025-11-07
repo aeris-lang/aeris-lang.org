@@ -1,9 +1,9 @@
 <script lang="ts">
-  import CodeExample from "$lib/components/CodeExample.svelte";
-  import Features from "$lib/components/Features.svelte";
-  import Footer from "$lib/components/Footer.svelte";
-  import Header from "$lib/components/Header.svelte";
-  import Intro from "$lib/components/Intro.svelte";
+  import CodeExample from "./CodeExample.svelte";
+  import Features from "./Features.svelte";
+  import Footer from "./Footer.svelte";
+  import Header from "./Header.svelte";
+  import Intro from "./Intro.svelte";
 </script>
 
 <Header />

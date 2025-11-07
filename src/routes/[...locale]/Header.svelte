@@ -1,7 +1,7 @@
 <script lang="ts">
+  import Lettermark from "$lib/components/Lettermark.svelte";
   import { m } from "$lib/paraglide/messages";
   import Github from "~icons/mdi/github";
-  import Lettermark from "./Lettermark.svelte";
 </script>
 
 <header class="header">
