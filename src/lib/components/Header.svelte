@@ -1,20 +1,7 @@
 <script lang="ts">
   import { m } from "$lib/paraglide/messages";
-  import DarkMode from "~icons/material-symbols/dark-mode";
-  import LightMode from "~icons/material-symbols/light-mode";
   import Github from "~icons/mdi/github";
   import Lettermark from "./Lettermark.svelte";
-
-  type Theme = "dark" | "light";
-  let theme = $state<Theme>("dark");
-
-  function handleLightModeButtonClick() {
-    theme = "light";
-  }
-
-  function handleDarkModeButtonClick() {
-    theme = "dark";
-  }
 </script>
 
 <header class="header">
@@ -25,15 +12,6 @@
     <a href="https://github.com/aeris-lang" aria-label={m.github_link_aria_label()}>
       <Github />
     </a>
-    {#if theme === "dark"}
-      <button onclick={handleLightModeButtonClick} aria-label={m.light_mode_button_aria_label()}>
-        <LightMode />
-      </button>
-    {:else if theme === "light"}
-      <button onclick={handleDarkModeButtonClick} aria-label={m.dark_mode_button_aria_label()}>
-        <DarkMode />
-      </button>
-    {/if}
   </nav>
 </header>
 
@@ -64,8 +42,7 @@
     align-items: center;
     gap: 1rem;
 
-    a,
-    button {
+    a {
       display: block;
       transition: 300ms ease-out;
       color: var(--color-text-muted);

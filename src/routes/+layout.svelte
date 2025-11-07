@@ -34,24 +34,8 @@
   @use "$lib/palette.scss" as palette;
 
   :global {
-    @media (prefers-color-scheme: dark) {
-      :root {
-        @include palette.dark-scheme();
-      }
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root {
-        @include palette.light-scheme();
-      }
-    }
-
-    :root[data-theme="dark"] {
-      @include palette.dark-scheme();
-    }
-
-    :root[data-theme="light"] {
-      @include palette.light-scheme();
+    :root {
+      @include palette.color-scheme();
     }
 
     html {

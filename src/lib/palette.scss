@@ -1,27 +1,4 @@
-@mixin -base-scheme() {
-  --color-code-bg: #1f1f1f;
-  --color-code-border: #333333;
-  --color-code-terminal-bg: #181818;
-
-  --color-code-text: #e0e0e0;
-  --color-code-text-muted: #aaaaaa;
-}
-
-@mixin light-scheme() {
-  @include -base-scheme();
-
-  --color-primary: #000000;
-
-  --color-bg: #ffffff;
-  --color-border: #cccccc;
-
-  --color-text: #1f1f1f;
-  --color-text-muted: #555555;
-}
-
-@mixin dark-scheme() {
-  @include -base-scheme();
-
+@mixin color-scheme() {
   --color-primary: #ffffff;
 
   --color-bg: #000000;
@@ -29,4 +6,7 @@
 
   --color-text: #e0e0e0;
   --color-text-muted: #aaaaaa;
+
+  --color-code-bg: #1f1f1f;
+  --color-code-terminal-bg: #181818;
 }
