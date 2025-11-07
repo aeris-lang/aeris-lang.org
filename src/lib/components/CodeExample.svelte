@@ -16,14 +16,34 @@
   type State = "pending" | "running" | "blocking";
 
   let processState = $state<State>("pending");
-  let input = $state<string>("");
+  let inputBuffer = $state<string>("");
   let output = $state<string>("");
 
-  function handleRun() {
+  $effect(() => {
+    const index = inputBuffer.indexOf("\n");
+    if (index < 0) {
+      return;
+    }
     processState = "running";
+    const name = inputBuffer.slice(0, index);
+    output += inputBuffer;
+    inputBuffer = "";
+    if (name.length > 0) {
+      output += `Hello, ${name}!`;
+    } else {
+      output += "Name cannot be empty!";
+    }
+    processState = "pending";
+  });
+
+  function handleRun() {
+    output = "";
+    processState = "running";
+    processState = "blocking";
   }
 
   function handleStop() {
+    inputBuffer = "";
     processState = "pending";
   }
 </script>
@@ -55,11 +75,10 @@
       {/each}
     </code>
     <div class="side-panel">
-      <samp class="output">
+      <samp class="terminal">
+        <span class="output">{output}</span>
         {#if processState === "blocking"}
-          <textarea bind:value={input}></textarea>
-        {:else}
-          {output}
+          <textarea class="input-buffer" bind:value={inputBuffer}></textarea>
         {/if}
       </samp>
       <nav class="controls">
@@ -138,10 +157,20 @@
     background-color: var(--color-code-terminal-bg);
   }
 
-  .output {
+  .terminal {
     flex: 1;
     padding: 1rem;
     display: block;
+  }
+
+  .output {
+    white-space: pre;
+  }
+
+  .input-buffer {
+    width: 100%;
+    outline: none;
+    resize: none;
   }
 
   .controls {

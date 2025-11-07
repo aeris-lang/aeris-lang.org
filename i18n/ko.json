@@ -1,6 +1,9 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "home_link_aria_label": "AERIS 레터마크",
+  "github_link_aria_label": "GitHub로 가기",
+  "dark_mode_button_aria_label": "다크 모드로 변경",
+  "light_mode_button_aria_label": "라이트 모드로 변경",
   "intro_get_started": "시작하기",
   "code_example_run": "실행",
   "code_example_running": "실행 중...",

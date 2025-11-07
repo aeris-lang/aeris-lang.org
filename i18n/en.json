@@ -1,7 +1,9 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "github": "GitHub",
   "home_link_aria_label": "AERIS Lettermark",
+  "github_link_aria_label": "Go to GitHub",
+  "dark_mode_button_aria_label": "Change to dark mode",
+  "light_mode_button_aria_label": "Change to light mode",
   "intro_h1_1": "Next Generation",
   "intro_h1_2": "Programming Language",
   "intro_h2": "Fast, Strict, Flexible",

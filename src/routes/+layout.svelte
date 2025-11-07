@@ -3,15 +3,16 @@
 
   import { asset } from "$app/paths";
   import { page } from "$app/state";
-  import { MetaTags } from "svelte-meta-tags";
 
   const { children } = $props();
 
   const { title, description } = page.data;
 </script>
 
-<MetaTags {title} {description} />
 <svelte:head>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="color-scheme" content="dark light" />
   <link rel="icon" type="image/svg+xml" href={asset("/lettermark-light.svg")} />
   <link
     rel="icon"
@@ -19,31 +20,12 @@
     href={asset("/lettermark-dark.svg")}
     media="(prefers-color-scheme: light)"
   />
-  <meta name="color-scheme" content="dark light" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
   />
-  <script>
-    (() => {
-      const dataset = document.documentElement.dataset;
-      const theme = localStorage.getItem("theme");
-      switch (theme) {
-        case "dark":
-          break;
-        case "light":
-          dataset.theme = "light";
-          break;
-        default:
-          const preferLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-          if (preferLight) {
-            dataset.theme = "light";
-          }
-      }
-    })();
-  </script>
 </svelte:head>
 
 {@render children()}
@@ -52,7 +34,19 @@
   @use "$lib/palette.scss" as palette;
 
   :global {
-    :root {
+    @media (prefers-color-scheme: dark) {
+      :root {
+        @include palette.dark-scheme();
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        @include palette.light-scheme();
+      }
+    }
+
+    :root[data-theme="dark"] {
       @include palette.dark-scheme();
     }
 
@@ -74,6 +68,10 @@
     * {
       border-color: var(--color-border);
       outline-color: var(--color-border);
+    }
+
+    button:enabled {
+      cursor: pointer;
     }
   }
 </style>

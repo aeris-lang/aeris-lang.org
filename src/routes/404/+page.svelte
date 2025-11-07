@@ -1,7 +1,5 @@
-<script lang="ts">
-  import { MetaTags } from "svelte-meta-tags";
-</script>
-
-<MetaTags robots="noindex, nofollow" />
+<svelte:head>
+  <meta name="robots" content="noindex, nofollow" />
+</svelte:head>
 
 <p>Page Not Found</p>
