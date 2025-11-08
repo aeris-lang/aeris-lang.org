@@ -24,7 +24,7 @@
   }
 
   .content {
-    font-size: max(1cqw, 0.6rem);
+    font-size: clamp(0.6rem, 1cqw, 1.6rem);
     padding: 12em 0;
     display: flex;
     flex-direction: column;

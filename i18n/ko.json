@@ -1,13 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "home_link_aria_label": "AERIS 레터마크",
-  "github_link_aria_label": "GitHub로 가기",
-  "auto_mode_button_aria_label": "자동 모드로 변경",
-  "dark_mode_button_aria_label": "다크 모드로 변경",
-  "light_mode_button_aria_label": "라이트 모드로 변경",
-  "intro_get_started": "시작하기",
-  "code_example_run": "실행",
-  "code_example_running": "실행 중...",
-  "code_example_waiting_input": "입력 대기 중...",
-  "code_example_stop": "중지"
+  "home_link_aria_label": "홈으로 가기",
+  "releases": "릴리스",
+  "github": "GitHub",
+  "intro_get_started": "시작하기"
 }

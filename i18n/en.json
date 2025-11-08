@@ -1,16 +1,10 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "home_link_aria_label": "AERIS Lettermark",
-  "github_link_aria_label": "Go to GitHub",
-  "auto_mode_button_aria_label": "Change to auto mode",
-  "dark_mode_button_aria_label": "Change to dark mode",
-  "light_mode_button_aria_label": "Change to light mode",
+  "home_link_aria_label": "Go to Home",
+  "releases": "Releases",
+  "github": "GitHub",
   "intro_h1_1": "Next Generation",
   "intro_h1_2": "Programming Language",
   "intro_h2": "Fast, Strict, Flexible",
-  "intro_get_started": "Get Started",
-  "code_example_run": "Run",
-  "code_example_running": "Running...",
-  "code_example_waiting_input": "Waiting for input...",
-  "code_example_stop": "Stop"
+  "intro_get_started": "Get Started"
 }

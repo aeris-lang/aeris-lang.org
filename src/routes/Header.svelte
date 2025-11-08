@@ -1,22 +1,26 @@
 <script lang="ts">
   import Lettermark from "$lib/components/Lettermark.svelte";
   import { m } from "$lib/paraglide/messages";
-  import Github from "~icons/mdi/github";
 </script>
 
-<header class="header">
+<header class="container">
   <a class="home-link" href="/" aria-label={m.home_link_aria_label()}>
     <Lettermark />
   </a>
   <nav class="nav-bar">
-    <a href="https://github.com/aeris-lang" aria-label={m.github_link_aria_label()}>
-      <Github />
-    </a>
+    <a
+      href="https://github.com/aeris-lang/aeris/releases"
+      target="_blank"
+      rel="external noopener noreferrer">{m.releases()}</a
+    >
+    <a href="https://github.com/aeris-lang" target="_blank" rel="external noopener noreferrer"
+      >{m.github()}</a
+    >
   </nav>
 </header>
 
 <style lang="scss">
-  .header {
+  .container {
     position: sticky;
     top: 0;
     height: 1.4rem;
@@ -43,7 +47,7 @@
     gap: 1rem;
 
     a {
-      display: block;
+      font-size: 0.9rem;
       transition: 300ms ease-out;
       color: var(--color-text-muted);
       user-select: none;

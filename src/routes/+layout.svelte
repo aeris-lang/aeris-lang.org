@@ -3,9 +3,10 @@
 
   import { asset } from "$app/paths";
   import { page } from "$app/state";
+  import Footer from "./Footer.svelte";
+  import Header from "./Header.svelte";
 
   const { children } = $props();
-
   const { title, description } = page.data;
 </script>
 
@@ -28,7 +29,13 @@
   />
 </svelte:head>
 
-{@render children()}
+<div class="container">
+  <Header />
+  <main class="content">
+    {@render children()}
+  </main>
+  <Footer />
+</div>
 
 <style lang="scss">
   @use "$lib/palette.scss" as palette;
@@ -57,5 +64,17 @@
     button:enabled {
       cursor: pointer;
     }
+  }
+
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
 </style>
