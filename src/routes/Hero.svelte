@@ -1,19 +1,15 @@
-<script lang="ts">
-  import { m } from "$lib/paraglide/messages";
-</script>
-
 <section class="container">
   <div class="content">
     <div class="desc">
       <h1>
-        <span>{m.intro_h1_1()}</span>
-        <span>{m.intro_h1_2()}</span>
+        <span>Next Generation</span>
+        <span>Programming Language</span>
       </h1>
-      <h2>{m.intro_h2()}</h2>
+      <h2>Fast, Strict, Flexible</h2>
     </div>
     <nav>
-      <a href="/">{m.intro_get_started()}</a>
-      <a href="/">Learn AERIS</a>
+      <a href="/">Learn More</a>
+      <a href="/">Drafts</a>
     </nav>
   </div>
 </section>

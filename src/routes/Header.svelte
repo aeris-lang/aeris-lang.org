@@ -1,20 +1,19 @@
 <script lang="ts">
   import Lettermark from "$lib/components/Lettermark.svelte";
-  import { m } from "$lib/paraglide/messages";
 </script>
 
 <header class="container">
-  <a class="home-link" href="/" aria-label={m.home_link_aria_label()}>
+  <a class="home-link" href="/" aria-label="Go to Home">
     <Lettermark />
   </a>
   <nav class="nav-bar">
     <a
       href="https://github.com/aeris-lang/aeris/releases"
       target="_blank"
-      rel="external noopener noreferrer">{m.releases()}</a
+      rel="external noopener noreferrer">Releases</a
     >
     <a href="https://github.com/aeris-lang" target="_blank" rel="external noopener noreferrer"
-      >{m.github()}</a
+      >GitHub</a
     >
   </nav>
 </header>

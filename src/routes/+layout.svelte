@@ -6,7 +6,8 @@
   import Footer from "./Footer.svelte";
   import Header from "./Header.svelte";
 
-  const { children } = $props();
+  const { children, data } = $props();
+  const { canonicalHref } = data;
   const { title, description } = page.data;
 </script>
 
@@ -27,6 +28,8 @@
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
   />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonicalHref} />
 </svelte:head>
 
 <div class="container">

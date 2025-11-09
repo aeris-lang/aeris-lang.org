@@ -1,10 +1,9 @@
 import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
-import { mdsvex } from "mdsvex";
 
 /** @type {import("@sveltejs/kit").Config} */
 export default {
-  preprocess: [vitePreprocess(), mdsvex()],
+  preprocess: [vitePreprocess()],
   kit: {
     adapter: adapter(),
     prerender: {
@@ -12,5 +11,4 @@ export default {
       origin: "https://aeris-lang.org",
     },
   },
-  extensions: [".svelte", ".svx"],
 };
