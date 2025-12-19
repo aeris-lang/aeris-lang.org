@@ -1,13 +1,3 @@
-<svg viewBox="0 0 100 100">
-  <path
-    fill="currentColor"
-    d="M50 0 0 100h73.30931l-9.54915-19.0983H30.9017l29.77457-59.54915Zm13.34534 26.69069L52.66907 48.04324 78.64745 100H100Z"
-  />
+<svg class="size-full" viewBox="0 0 100 100">
+  <path fill="currentColor" d="M50 0 0 100h73.30931l-9.54915-19.0983H30.9017l29.77457-59.54915Zm13.34534 26.69069L52.66907 48.04324 78.64745 100H100Z" />
 </svg>
-
-<style lang="scss">
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-</style>

@@ -14,18 +14,15 @@
 </script>
 
 <svelte:head>
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
-  />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" />
 </svelte:head>
 
-<section class="container">
-  <code class="code">
-    {#each lines as line, i}
-      <span class="line-number">{i + 1}</span>
-      <span class="line-text">
-        {#each line as token}
+<section class="container bg-code-bg">
+  <code class="gird-cols-[auto_1fr] mx-auto my-4 grid w-max pr-20 font-mono leading-normal select-none">
+    {#each lines as line, i (i)}
+      <span class="inline-block w-12 border-r-2 px-4 text-right text-muted">{i + 1}</span>
+      <span class="px-2 select-text">
+        {#each line as token, i (i)}
           {#if token === " "}
             <span>&nbsp;</span>
           {:else if token === "\t"}
@@ -42,15 +39,13 @@
 
 <style lang="scss">
   @mixin gradient($direction) {
-    content: "";
-    height: 2rem;
     display: block;
     background: linear-gradient($direction, var(--color-code-terminal-bg), transparent);
+    height: 2rem;
+    content: "";
   }
 
   .container {
-    background-color: var(--color-code-bg);
-
     &::before {
       @include gradient(to bottom);
     }
@@ -58,31 +53,5 @@
     &::after {
       @include gradient(to top);
     }
-  }
-
-  .code {
-    width: max-content;
-    padding-right: 5rem;
-    margin: 1rem auto;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    font-family: "Inconsolata", monospace;
-    font-size: 1rem;
-    line-height: 1.5;
-    user-select: none;
-  }
-
-  .line-number {
-    width: 3rem;
-    padding: 0 1rem;
-    display: inline-block;
-    text-align: right;
-    color: var(--color-text-muted);
-    border-right-width: 2px;
-  }
-
-  .line-text {
-    padding: 0 0.5rem;
-    user-select: text;
   }
 </style>

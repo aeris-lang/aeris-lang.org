@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: Inter, sans-serif;
+  --font-mono: Inconsolata, monospace;
+
+  --color-primary: #ffffff;
+
+  --color-bg: #000000;
+  --color-border: #333333;
+
+  --color-normal: #e0e0e0;
+  --color-muted: #aaaaaa;
+
+  --color-code-bg: #1f1f1f;
+  --color-code-terminal-bg: #181818;
+}
+
+@layer base {
+  body {
+    @apply bg-bg font-sans text-normal;
+  }
+
+  ::selection {
+    @apply bg-normal text-bg;
+  }
+
+  * {
+    @apply border-border outline-border;
+  }
+
+  button:enabled {
+    @apply cursor-pointer;
+  }
+}

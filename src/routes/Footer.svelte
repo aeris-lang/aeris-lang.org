@@ -1,12 +1,3 @@
-<footer class="container">
+<footer class="container border-t p-4 text-center text-muted">
   <span>© 2025 PhillY</span>
 </footer>
-
-<style lang="scss">
-  .container {
-    padding: 1rem;
-    border-top-width: 1px;
-    text-align: center;
-    color: var(--color-text-muted);
-  }
-</style>

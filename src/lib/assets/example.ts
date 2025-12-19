@@ -1,12 +1,4 @@
-export type TokenType =
-  | "comment"
-  | "keyword"
-  | "identifier"
-  | "function"
-  | "type"
-  | "operator"
-  | "string"
-  | "number";
+export type TokenType = "comment" | "keyword" | "identifier" | "function" | "type" | "operator" | "string" | "number";
 
 export type Token =
   | {
@@ -17,13 +9,7 @@ export type Token =
   | "\t";
 
 export const lines: Token[][] = [
-  [
-    { type: "keyword", text: "import" },
-    " ",
-    { type: "identifier", text: "std" },
-    { type: "operator", text: "." },
-    { type: "identifier", text: "io" },
-  ],
+  [{ type: "keyword", text: "import" }, " ", { type: "identifier", text: "std" }, { type: "operator", text: "." }, { type: "identifier", text: "io" }],
   [],
   [
     { type: "keyword", text: "fn" },
@@ -61,14 +47,7 @@ export const lines: Token[][] = [
     { type: "operator", text: ")" },
     { type: "operator", text: ";" },
   ],
-  [
-    "\t",
-    { type: "operator", text: "}" },
-    " ",
-    { type: "keyword", text: "else" },
-    " ",
-    { type: "operator", text: "{" },
-  ],
+  ["\t", { type: "operator", text: "}" }, " ", { type: "keyword", text: "else" }, " ", { type: "operator", text: "{" }],
   [
     "\t",
     "\t",

@@ -1,6 +1,5 @@
 import { includeIgnoreFile } from "@eslint/compat";
 import js from "@eslint/js";
-import unocss from "@unocss/eslint-config/flat";
 import prettier from "eslint-config-prettier";
 import svelte from "eslint-plugin-svelte";
 import { defineConfig } from "eslint/config";
@@ -35,5 +34,4 @@ export default defineConfig(
       },
     },
   },
-  unocss,
 );

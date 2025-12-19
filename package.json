@@ -12,30 +12,31 @@
     "format": "prettier --write .",
     "lint": "prettier --check . && eslint ."
   },
-  "dependencies": {
-    "tailwindcss": "^4.1",
-    "tslib": "^2.8"
-  },
   "devDependencies": {
-    "@eslint/compat": "^1.4",
+    "@eslint/compat": "^2.0",
     "@eslint/js": "^9.39",
     "@sveltejs/adapter-static": "^3.0",
-    "@sveltejs/kit": "^2.48",
+    "@sveltejs/kit": "^2.49",
     "@sveltejs/vite-plugin-svelte": "^6.2",
-    "autoprefixer": "^10.4.21",
+    "@tailwindcss/typography": "^0.5",
+    "@tailwindcss/vite": "^4.1",
+    "autoprefixer": "^10.4",
     "eslint": "^9.39",
     "eslint-config-prettier": "^10.1",
     "eslint-plugin-svelte": "^3.13",
     "globals": "^16.5",
     "jiti": "^2.6",
-    "postcss": "^8.5.6",
-    "prettier": "^3.6",
+    "postcss": "^8.5",
+    "prettier": "^3.7",
     "prettier-plugin-svelte": "^3.4",
-    "sass-embedded": "^1.93",
-    "svelte": "^5.43",
+    "prettier-plugin-tailwindcss": "^0.7",
+    "sass-embedded": "^1.97",
+    "svelte": "^5.46",
     "svelte-check": "^4.3",
+    "tailwindcss": "^4.1",
+    "tslib": "^2.8",
     "typescript": "^5.9",
-    "typescript-eslint": "^8.46",
-    "vite": "^7.2"
+    "typescript-eslint": "^8.50",
+    "vite": "^7.3"
   }
 }

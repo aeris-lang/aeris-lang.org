@@ -1,3 +1,7 @@
+<script lang="ts">
+  import { resolve } from "$app/paths";
+</script>
+
 <section class="container">
   <div class="content">
     <div class="desc">
@@ -8,8 +12,8 @@
       <h2>Fast, Strict, Flexible</h2>
     </div>
     <nav>
-      <a href="/">Learn More</a>
-      <a href="/">Drafts</a>
+      <a href={resolve("/")}>Learn More</a>
+      <a href={resolve("/")}>Drafts</a>
     </nav>
   </div>
 </section>
@@ -20,12 +24,12 @@
   }
 
   .content {
-    font-size: clamp(0.6rem, 1cqw, 1.6rem);
-    padding: 12em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4em;
+    padding: 12em 0;
+    font-size: clamp(0.6rem, 1cqw, 1.6rem);
   }
 
   .desc {
@@ -36,13 +40,13 @@
   }
 
   h1 {
+    display: grid;
+    grid-auto-rows: 1em;
+    grid-auto-flow: row;
+    place-items: center;
+    font-weight: 700;
     font-size: 4em;
     line-height: 1.2;
-    font-weight: 700;
-    display: grid;
-    grid-auto-flow: row;
-    grid-auto-rows: 1em;
-    place-items: center;
 
     span {
       background: linear-gradient(to top, var(--color-text-muted) 0%, var(--color-primary) 50%);
@@ -52,31 +56,31 @@
   }
 
   h2 {
+    color: var(--color-text-muted);
+    font-weight: 600;
     font-size: 2.5em;
     line-height: 1;
-    font-weight: 600;
-    color: var(--color-text-muted);
   }
 
   nav {
-    font-size: 1rem;
     display: flex;
     gap: 1em;
+    font-size: 1rem;
 
     a {
-      font-size: 1em;
-      line-height: 1;
-      padding: 0.8em 1.6em;
       display: block;
-      border-radius: 0.4em;
       transition: 100ms ease-out;
       transition-property: background-color;
+      border-radius: 0.4em;
+      padding: 0.8em 1.6em;
+      font-size: 1em;
+      line-height: 1;
       user-select: none;
     }
 
     a:first-child {
-      color: var(--color-bg);
       background-color: var(--color-primary);
+      color: var(--color-bg);
 
       &:hover {
         background-color: rgb(from var(--color-primary) r g b / 0.9);
