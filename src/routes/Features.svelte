@@ -1,16 +1,16 @@
 <script lang="ts">
 </script>
 
-{#snippet feature({ title, description }: { title: string; description: string })}
-  <article class="grid w-80 gap-4">
-    <h1 class="text-2xl leading-none font-medium">{title}</h1>
-    <p>{description}</p>
-  </article>
-{/snippet}
-
 <section class="px-12">
   <h1 class="m-8 text-center text-3xl leading-none font-semibold">Why AERIS?</h1>
   <div class="m-8 flex flex-wrap justify-center gap-8">
+    {#snippet feature({ title, description }: { title: string; description: string })}
+      <article class="grid w-80 gap-4">
+        <h1 class="text-2xl leading-none font-medium">{title}</h1>
+        <p>{description}</p>
+      </article>
+    {/snippet}
+
     {@render feature({
       title: "Fast",
       description: "Performs all possible operations at compile time, achieving extremely fast speed.",
