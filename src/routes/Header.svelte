@@ -10,9 +10,11 @@
     </a>
     <nav class="flex items-center gap-4">
       {#snippet a(label: string, href: string)}
+        <!-- eslint-disable svelte/no-navigation-without-resolve -->
         <a class="text-sm transition-colors duration-300 ease-out select-none not-hover:text-muted" {href} target="_blank" rel="external noopener noreferrer"
           >{label}</a
         >
+        <!-- eslint-enable svelte/no-navigation-without-resolve -->
       {/snippet}
       {@render a("Releases", "https://github.com/aeris-lang/aeris/releases")}
       {@render a("GitHub", "https://github.com/aeris-lang")}
