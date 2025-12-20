@@ -2,97 +2,29 @@
   import { resolve } from "$app/paths";
 </script>
 
-<section class="container">
-  <div class="content">
-    <div class="desc">
-      <h1>
-        <span>Next Generation</span>
-        <span>Programming Language</span>
+<section class="@container">
+  <div class="flex flex-col items-center gap-[4em] py-[12em] text-[clamp(0.6rem,1cqw,1.6rem)]">
+    <div class="flex flex-col items-center gap-[2em]">
+      <h1 class="grid grid-flow-row auto-rows-[1em] place-items-center text-[4em] leading-tight font-bold">
+        {#snippet span(text: string)}
+          <span class="bg-[linear-gradient(to_top,var(--color-muted)_0%,var(--color-primary)_50%)] bg-clip-text text-transparent">{text}</span>
+        {/snippet}
+        {@render span("Next Generation")}
+        {@render span("Programming Language")}
       </h1>
-      <h2>Fast, Strict, Flexible</h2>
+      <h2 class="text-[2.5em] leading-none font-semibold text-muted">Fast, Strict, Flexible</h2>
     </div>
-    <nav>
-      <a href={resolve("/")}>Learn More</a>
-      <a href={resolve("/")}>Drafts</a>
+    <nav class="flex gap-[1em] text-base">
+      {#snippet a(label: string, href: string)}
+        <a
+          class="block rounded-[0.4em] px-[1.6em] py-[0.8em] text-[1em] leading-none transition-colors duration-100 ease-out select-none
+            not-first:border first:bg-primary first:text-bg
+            not-first:hover:bg-[rgb(from_var(--color-primary)_r_g_b/0.1)] first:hover:bg-[rgb(from_var(--color-primary)_r_g_b/0.9)]"
+          {href}>{label}</a
+        >
+      {/snippet}
+      {@render a("Get Started", resolve("/"))}
+      {@render a("Drafts", resolve("/"))}
     </nav>
   </div>
 </section>
-
-<style lang="scss">
-  .container {
-    container-type: inline-size;
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4em;
-    padding: 12em 0;
-    font-size: clamp(0.6rem, 1cqw, 1.6rem);
-  }
-
-  .desc {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2em;
-  }
-
-  h1 {
-    display: grid;
-    grid-auto-rows: 1em;
-    grid-auto-flow: row;
-    place-items: center;
-    font-weight: 700;
-    font-size: 4em;
-    line-height: 1.2;
-
-    span {
-      background: linear-gradient(to top, var(--color-text-muted) 0%, var(--color-primary) 50%);
-      background-clip: text;
-      color: transparent;
-    }
-  }
-
-  h2 {
-    color: var(--color-text-muted);
-    font-weight: 600;
-    font-size: 2.5em;
-    line-height: 1;
-  }
-
-  nav {
-    display: flex;
-    gap: 1em;
-    font-size: 1rem;
-
-    a {
-      display: block;
-      transition: 100ms ease-out;
-      transition-property: background-color;
-      border-radius: 0.4em;
-      padding: 0.8em 1.6em;
-      font-size: 1em;
-      line-height: 1;
-      user-select: none;
-    }
-
-    a:first-child {
-      background-color: var(--color-primary);
-      color: var(--color-bg);
-
-      &:hover {
-        background-color: rgb(from var(--color-primary) r g b / 0.9);
-      }
-    }
-
-    a:not(:first-child) {
-      border-width: 1px;
-
-      &:hover {
-        background-color: rgb(from var(--color-primary) r g b / 0.1);
-      }
-    }
-  }
-</style>
