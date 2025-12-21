@@ -2,27 +2,23 @@
 
 @theme {
   --font-sans: Inter, sans-serif;
-  --font-mono: Inconsolata, monospace;
 
   --color-primary: #ffffff;
 
   --color-bg: #000000;
   --color-border: #333333;
 
-  --color-normal: #e0e0e0;
-  --color-muted: #aaaaaa;
-
-  --color-code-bg: #1f1f1f;
-  --color-code-terminal-bg: #181818;
+  --color-text: #e0e0e0;
+  --color-text-muted: #aaaaaa;
 }
 
 @layer base {
   body {
-    @apply bg-bg font-sans text-normal;
+    @apply bg-bg font-sans text-text;
   }
 
   ::selection {
-    @apply bg-normal text-bg;
+    @apply bg-text text-bg;
   }
 
   * {
