@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { resolve } from "$app/paths";
   import type { ResolvedPathname } from "$app/types";
 </script>
 
@@ -26,8 +25,8 @@
         >
         <!-- eslint-enable svelte/no-navigation-without-resolve -->
       {/snippet}
-      {@render a("Get Started", resolve("/"))}
-      {@render a("Drafts", resolve("/"))}
+      {@render a("Get Started", "/")}
+      {@render a("Drafts", "/")}
     </nav>
   </div>
 </section>

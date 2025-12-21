@@ -1,5 +1,5 @@
 {
-  "name": "AERIS Document",
+  "name": "aeris-lang.org",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24-trixie",
   "customizations": {
     "vscode": {
