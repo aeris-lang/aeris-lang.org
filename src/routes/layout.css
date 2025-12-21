@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Inter, sans-serif;
+
+  --color-primary: #ffffff;
+
+  --color-bg: #000000;
+  --color-border: #333333;
+
+  --color-text: #e0e0e0;
+  --color-text-muted: #aaaaaa;
+}
+
+@layer base {
+  body {
+    @apply bg-bg font-sans text-text;
+  }
+
+  * {
+    @apply border-border outline-border;
+  }
+
+  ::selection {
+    @apply bg-text text-bg;
+  }
+}
