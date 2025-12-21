@@ -7,8 +7,10 @@ export default {
   kit: {
     adapter: adapter(),
     prerender: {
-      concurrency: 10,
       origin: "https://aeris-lang.org",
+    },
+    paths: {
+      assets: "https://aeris-lang.org",
     },
   },
 };

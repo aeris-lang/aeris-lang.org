@@ -19,9 +19,6 @@
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={asset("/og-image.png")} />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="1200" />
   <meta property="og:url" content={canonicalHref} />
   <meta property="og:type" content="website" />
   <link rel="canonical" href={canonicalHref} />
