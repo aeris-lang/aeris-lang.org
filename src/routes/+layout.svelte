@@ -15,6 +15,12 @@
   <meta name="description" content={description} />
   <meta name="color-scheme" content="dark light" />
   <meta name="robots" content="index, follow" />
+  <meta property="og:site_name" content="AERIS Programming Language" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={asset("/og-image.png")} />
+  <meta property="og:url" content={canonicalHref} />
+  <meta property="og:type" content="website" />
   <link rel="canonical" href={canonicalHref} />
   <link rel="icon" type="image/svg+xml" href={asset("/favicon/light.svg")} />
   <link rel="icon" type="image/svg+xml" href={asset("/favicon/dark.svg")} media="(prefers-color-scheme: light)" />
