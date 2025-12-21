@@ -5,7 +5,7 @@
 
 <div class="grid min-h-screen grid-rows-[auto_1fr]">
   <header class="sticky top-0 flex items-center justify-between border-b border-border bg-bg/50 px-6 py-4 backdrop-blur-xs">
-    <a href={resolve("/")}>
+    <a href={resolve("/")} aria-label="Go to home">
       <div class="size-6 text-primary">
         <Lettermark />
       </div>
