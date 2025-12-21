@@ -17,15 +17,11 @@
     @apply bg-bg font-sans text-text;
   }
 
-  ::selection {
-    @apply bg-text text-bg;
-  }
-
   * {
     @apply border-border outline-border;
   }
 
-  button:enabled {
-    @apply cursor-pointer;
+  ::selection {
+    @apply bg-text text-bg;
   }
 }
