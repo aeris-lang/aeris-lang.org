@@ -23,10 +23,22 @@
   <meta property="og:type" content="website" />
   <link rel="canonical" href={canonicalHref} />
   <link rel="icon" type="image/svg+xml" href={asset("/favicon/light.svg")} />
-  <link rel="icon" type="image/svg+xml" href={asset("/favicon/dark.svg")} media="(prefers-color-scheme: light)" />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href={asset("/favicon/dark.svg")}
+    media="(prefers-color-scheme: light)"
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+  />
 </svelte:head>
 
 {@render children()}

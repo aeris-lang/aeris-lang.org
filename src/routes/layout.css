@@ -14,7 +14,7 @@
 
 @layer base {
   body {
-    @apply bg-bg font-sans text-text;
+    @apply bg-bg text-text font-sans;
   }
 
   * {
