@@ -1,34 +1,30 @@
 <script lang="ts">
   import "./layout.css";
 
-  import { asset } from "$app/paths";
   import { page } from "$app/state";
+  import { faviconDark, faviconLight, profile as ogImage } from "$lib/assets";
+  import { SITE_NAME } from "$lib/constants";
 
-  const { children } = $props();
-  const { title, subtitle, description } = page.data;
-  const fullTitle = subtitle ? `${title} — ${subtitle}` : title;
-  const canonicalHref = new URL(page.url.pathname, page.url.origin).href;
+  const { children, data } = $props();
+  const { canonical } = $derived(data);
+  const { title, subtitle, description } = $derived(page.data);
+  const fullTitle = $derived(subtitle ? `${title} — ${subtitle}` : title);
 </script>
 
 <svelte:head>
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
-  <meta name="color-scheme" content="dark light" />
+  <meta name="color-scheme" content="dark" />
   <meta name="robots" content="index, follow" />
-  <meta property="og:site_name" content="AERIS Programming Language" />
+  <meta property="og:site_name" content={SITE_NAME} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={asset("/og-image.png")} />
-  <meta property="og:url" content={canonicalHref} />
-  <meta property="og:type" content="website" />
-  <link rel="canonical" href={canonicalHref} />
-  <link rel="icon" type="image/svg+xml" href={asset("/favicon/light.svg")} />
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href={asset("/favicon/dark.svg")}
-    media="(prefers-color-scheme: light)"
-  />
+  <meta property="og:image" content={ogImage} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href={faviconLight} />
+  <link rel="icon" href={faviconDark} media="(prefers-color-scheme: light)" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     rel="preconnect"
