@@ -9,5 +9,8 @@ export default {
     prerender: {
       origin: process.env.ORIGIN,
     },
+    paths: {
+      assets: process.env.ORIGIN,
+    },
   },
 };
