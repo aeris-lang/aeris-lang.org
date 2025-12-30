@@ -7,10 +7,7 @@ export default {
   kit: {
     adapter: adapter(),
     prerender: {
-      origin: "https://aeris-lang.org",
-    },
-    paths: {
-      assets: "https://aeris-lang.org",
+      origin: process.env.ORIGIN,
     },
   },
 };
