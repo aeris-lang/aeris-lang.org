@@ -1,4 +1,4 @@
-<svg class="size-full" viewBox="0 0 100 100">
+<svg class="size-6" viewBox="0 0 100 100">
   <path
     fill="#fff"
     d="
