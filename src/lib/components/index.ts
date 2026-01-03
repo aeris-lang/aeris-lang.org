@@ -1,1 +1,1 @@
-export { default as Lettermark } from "./Lettermark.svelte";
+export { default as Letterform } from "./Letterform.svelte";
