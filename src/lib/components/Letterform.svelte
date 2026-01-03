@@ -1,3 +1,5 @@
+<script lang="ts"></script>
+
 <svg class="size-6" viewBox="0 0 100 100">
   <path
     fill="#fff"
