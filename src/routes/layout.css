@@ -1,18 +1,38 @@
 @import "tailwindcss";
 
+@property --hue {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: true;
+}
+
 @theme {
   --font-sans: Inter, sans-serif;
-
-  --color-primary: #ffffff;
 
   --color-bg: #000000;
   --color-border: #333333;
 
   --color-text: #e0e0e0;
   --color-text-muted: #aaaaaa;
+
+  --color-rainbow-start: oklch(0.87 0.06 var(--hue));
+  --color-rainbow-end: oklch(0.87 0.06 calc(var(--hue) + 60));
 }
 
 @layer base {
+  @keyframes hue {
+    from {
+      --hue: 0;
+    }
+    to {
+      --hue: 360;
+    }
+  }
+
+  html {
+    animation: hue 10s linear infinite;
+  }
+
   body {
     @apply bg-bg text-text font-sans;
   }
