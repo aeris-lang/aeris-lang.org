@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @property --hue {
   syntax: "<number>";
@@ -12,8 +13,8 @@
   --color-bg: #000000;
   --color-border: #333333;
 
-  --color-text: #e0e0e0;
-  --color-text-muted: #aaaaaa;
+  --color-fg: #e0e0e0;
+  --color-muted: #aaaaaa;
 
   --color-rainbow-start: oklch(0.87 0.06 var(--hue));
   --color-rainbow-end: oklch(0.87 0.06 calc(var(--hue) + 60));
@@ -34,7 +35,7 @@
   }
 
   body {
-    @apply bg-bg text-text font-sans;
+    @apply bg-bg text-fg font-sans;
   }
 
   * {
@@ -42,6 +43,6 @@
   }
 
   ::selection {
-    @apply bg-text text-bg;
+    @apply bg-fg text-bg;
   }
 }

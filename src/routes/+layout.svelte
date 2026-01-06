@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "./layout.css";
+  import "../app.css";
 
   import { resolve } from "$app/paths";
   import { page } from "$app/state";
@@ -7,9 +7,10 @@
   import { Letterform } from "$lib/components";
   import { SITE_NAME } from "$lib/constants";
 
-  const { children, data } = $props();
-  const { canonical } = $derived(data);
-  const { title, subtitle, description } = $derived(page.data);
+  const { children } = $props();
+  const { title, subtitle, description, robots, canonical } = $derived(
+    page.data,
+  );
   const fullTitle = $derived(`${title} — ${subtitle}`);
 </script>
 
@@ -17,7 +18,7 @@
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
   <meta name="color-scheme" content="dark" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content={robots} />
   <meta property="og:site_name" content={SITE_NAME} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
@@ -51,7 +52,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div class="not-hover:text-text-muted duration-200 ease-in-out">
+          <div class="not-hover:text-muted duration-200 ease-in-out">
             <div class="px-2 py-1">
               <span>GitHub</span>
             </div>

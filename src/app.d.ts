@@ -4,6 +4,8 @@ declare global {
       title: string;
       subtitle: string;
       description: string;
+      robots: string;
+      canonical: string;
     }
   }
 }
