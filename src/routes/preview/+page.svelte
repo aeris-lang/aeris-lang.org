@@ -4,9 +4,10 @@
 </script>
 
 <h1>AERIS Preview</h1>
+<p>Welcome to the AERIS Preview!</p>
 <p>
-  Welcome to the AERIS Preview!<br />
-  This preview showcases some of AERIS's unique features.<br />
+  This preview showcases the unique features of AERIS. To get the most out of
+  this guide, familiarity with general programming concepts is recommended.
 </p>
 
 <h2>Previews</h2>

@@ -5,8 +5,10 @@
   const { children } = $props();
 </script>
 
-<div class="mx-auto grid h-max max-w-300 grid-cols-[200px_1fr] gap-4">
-  <aside class="sticky top-20 z-10 self-start">
+<div
+  class="mx-auto grid max-w-max md:grid-cols-[auto_auto] lg:grid-cols-[1fr_auto_1fr]"
+>
+  <aside class="z-10 self-start md:sticky md:top-20">
     <nav>
       <ul class="grid grid-flow-row">
         <li>
@@ -28,7 +30,9 @@
       </ul>
     </nav>
   </aside>
-  <main class="prose prose-invert prose-headings:font-semibold p-8">
-    {@render children()}
+  <main class="prose prose-invert prose-sm md:prose-base lg:prose-lg min-w-0">
+    <div class="prose-headings:font-semibold prose-pre:bg-[#1F1F1F] p-8">
+      {@render children()}
+    </div>
   </main>
 </div>

@@ -1,0 +1,10 @@
+fn receive_password(password: String) {
+  let len = password.len();
+  premise len >= 12 and len <= 128;
+  println(password);
+}
+
+fn main {
+  receive_password("HelloAERIS123"); // Ok
+  receive_password("pswd1234"); // Compile Error: Length (8) is less than 12
+}

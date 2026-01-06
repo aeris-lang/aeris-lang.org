@@ -1,0 +1,15 @@
+import stdin from std/io
+
+fn receive_password(password: String) {
+  let len = password.len();
+  premise len >= 12 and len <= 128;
+  println(password);
+}
+
+fn main {
+  let input = stdin.read_line();
+  receive_password(sat input)
+  else {
+    println("Invalid password!");
+  };
+}
