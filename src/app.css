@@ -10,14 +10,15 @@
 @theme {
   --font-sans: Inter, sans-serif;
 
-  --color-bg: #000000;
-  --color-border: #333333;
-
-  --color-fg: #e0e0e0;
-  --color-muted: #aaaaaa;
-
-  --color-rainbow-start: oklch(0.87 0.06 var(--hue));
-  --color-rainbow-end: oklch(0.87 0.06 calc(var(--hue) + 60));
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
+  --color-accent: oklch(0.87 0.06 var(--hue));
+  --color-main: #e0e0e0;
+  --color-muted: #9e9e9e;
+  --color-disabled: #555555;
+  --color-base: #2c2c2c;
+  --color-subtle: #1a1a1a;
+  --color-code: #1f1f1f;
 }
 
 @layer base {
@@ -31,18 +32,18 @@
   }
 
   html {
-    animation: hue 10s linear infinite;
+    animation: hue 6s linear infinite;
   }
 
   body {
-    @apply bg-bg text-fg font-sans;
+    @apply bg-secondary text-main font-sans;
   }
 
   * {
-    @apply border-border outline-border;
+    @apply border-base outline-base;
   }
 
   ::selection {
-    @apply bg-fg text-bg;
+    @apply bg-accent text-secondary;
   }
 }

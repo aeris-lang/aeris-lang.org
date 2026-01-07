@@ -41,7 +41,7 @@
 </svelte:head>
 
 <div class="grid min-h-screen grid-rows-[auto_1fr]">
-  <header class="bg-bg/40 sticky top-0 z-20 border-b backdrop-blur-xs">
+  <header class="bg-secondary/40 sticky top-0 z-20 border-b backdrop-blur-xs">
     <div class="flex items-center justify-between px-6 py-4">
       <a href={resolve("/")} aria-label="Go to home">
         <Letterform />

@@ -31,7 +31,7 @@
     </nav>
   </aside>
   <main class="prose prose-invert prose-sm md:prose-base lg:prose-lg min-w-0">
-    <div class="prose-headings:font-semibold prose-pre:bg-[#1F1F1F] p-8">
+    <div class="prose-headings:font-semibold prose-pre:bg-code p-8">
       {@render children()}
     </div>
   </main>
