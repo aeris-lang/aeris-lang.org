@@ -1,8 +1,8 @@
 <script lang="ts"></script>
 
-<svg class="size-6" viewBox="0 0 100 100">
+<svg class="text-primary size-6" viewBox="0 0 100 100">
   <path
-    fill="#fff"
+    fill="currentColor"
     d="
     M 50.0000000000000 0.00000000000000
     L 0.00000000000000 100.000000000000
