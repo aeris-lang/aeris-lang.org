@@ -36,19 +36,25 @@
       /\bnull\b/g,
       /\band\b/g,
       /\bor\b/g,
+      /\bcpnt\b/g,
+      /\bul\b/g,
+      /\bli\b/g,
+      /\bspan\b/g,
     ],
     [
       // Functions
       "#DCDCAA",
       /(?<=\bfn\b\s*)[a-zA-Z_]\w*/g,
       /[a-zA-Z_]\w*(?=\s*\()/g,
+      /[a-zA-Z_]\w*(?=\s*{)/g,
     ],
     [
       // Types
       "#4EC9B0",
       /(?<=\bimport\b\s*)[a-zA-Z_]\w*/g,
       /(?<=\bfrom\b\s*(?:[a-zA-Z_]\w*\/)*)[a-zA-Z_]\w*/g,
-      /(?<=:\s*)[a-zA-Z_]\w*/g,
+      /(?<=\bcpnt\b\s*)[a-zA-Z_]\w*/g,
+      /(?<=:\s*(?:[a-zA-Z_]\w*<)*)[a-zA-Z_]\w*/g,
     ],
     [
       // Identifiers
@@ -56,9 +62,15 @@
       /[a-zA-Z_]\w*/g,
     ],
     [
+      // HTML
+      "#808080",
+      /(?<!:\s*[a-zA-Z_]\w*(?:<[a-zA-Z_]\w*)*)<\/?(?=(?:[a-zA-Z_]\w*)?>)/g,
+      /(?<=(?<!:\s*[a-zA-Z_]\w*(?:<[a-zA-Z_]\w*)*)<\/?(?:[a-zA-Z_]\w*)?)>/g,
+    ],
+    [
       // Punctuations
       "#CCCCCC",
-      /[(),./:;<=>{}]/g,
+      /[(),./:;<=>{|}]/g,
     ],
   ];
 </script>

@@ -1,12 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@property --hue {
-  syntax: "<number>";
-  initial-value: 0;
-  inherits: true;
-}
-
 @theme {
   --font-sans: Inter, sans-serif;
 
@@ -22,6 +16,12 @@
 }
 
 @layer base {
+  @property --hue {
+    syntax: "<number>";
+    initial-value: 0;
+    inherits: false;
+  }
+
   @keyframes hue {
     from {
       --hue: 0;

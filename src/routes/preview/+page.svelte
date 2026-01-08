@@ -10,7 +10,6 @@
   this guide, familiarity with general programming concepts is recommended.
 </p>
 
-<h2>Previews</h2>
 <nav>
   <ul>
     {#each previews as { name, href }, i (i)}

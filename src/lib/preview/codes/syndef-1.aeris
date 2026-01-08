@@ -1,0 +1,9 @@
+cpnt TodoList(todos: List<String>) {
+  <>
+    <ul>
+      {todos.map { todo |
+        <li><span>{todo}</span></li>
+      }}
+    </ul>
+  </>
+}
