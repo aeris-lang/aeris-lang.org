@@ -126,6 +126,6 @@
 </script>
 
 <pre><code
-    >{#each tokens as [color, content]}<span style:color>{content}</span
+    >{#each tokens as [color, content], i (i)}<span style:color>{content}</span
       >{/each}</code
   ></pre>
