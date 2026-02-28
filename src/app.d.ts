@@ -1,6 +1,7 @@
 declare global {
   namespace App {
     interface PageData {
+      siteName: string;
       title: string;
       subtitle: string;
       description: string;
