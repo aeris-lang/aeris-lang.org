@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Pretendard", sans-serif;
+  --font-sans: "Pretendard Variable", sans-serif;
 
   --color-primary: #ffffff;
   --color-secondary: #000000;

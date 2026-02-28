@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "pretendard/dist/web/static/pretendard-dynamic-subset.css";
+  import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
   import "../app.css";
 
   import { page } from "$app/state";
