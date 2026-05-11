@@ -1,10 +1,11 @@
+<script lang="ts"></script>
+
 <div class="grid min-h-screen grid-rows-[auto_1fr]">
-  <header class="border-base border-b">
-    <div class="flex items-center justify-between px-6 py-4">
-      <svg class="text-primary size-6" viewBox="0 0 100 100">
-        <path
-          fill="currentColor"
-          d="
+  <header class="border-base border-b px-6 py-4">
+    <svg class="text-primary size-6" viewBox="0 0 100 100">
+      <path
+        fill="currentColor"
+        d="
           M 50.0000000000000 0.00000000000000
           L 0.00000000000000 100.000000000000
           L 73.3093135546974 100.000000000000
@@ -18,33 +19,35 @@
           L 78.6474508437579 100.000000000000
           L 100.000000000000 100.000000000000
           Z
-          "
-        />
-      </svg>
+        "
+      />
+    </svg>
+  </header>
+  <main class="grid place-items-center">
+    <div class="grid gap-2 text-center">
+      <p>
+        <span>AERIS in Development</span>
+        <br />
+        <span>Coming Soon</span>
+      </p>
       <nav>
         <a
+          class="not-hover:text-muted duration-200 ease-in-out"
           href="https://github.com/aeris-lang"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div class="not-hover:text-muted duration-200 ease-in-out">
-            <div class="px-2 py-1">
-              <span>GitHub</span>
-            </div>
-          </div>
+          <span>main</span>
+        </a>
+        <a
+          class="not-hover:text-muted duration-200 ease-in-out"
+          href="https://github.com/philly706869/aeris"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>dev</span>
         </a>
       </nav>
     </div>
-  </header>
-  <div>
-    <main class="grid h-full place-items-center">
-      <div class="text-center">
-        <p>
-          <span>AERIS in Development</span>
-          <br />
-          <span>Coming Soon</span>
-        </p>
-      </div>
-    </main>
-  </div>
+  </main>
 </div>

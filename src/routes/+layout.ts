@@ -5,7 +5,9 @@ export const prerender = !dev;
 export const ssr = true;
 export const csr = true;
 
-export const load: LayoutLoad = ({ url }) => ({
-  siteName: "AERIS Programming Language",
-  canonical: new URL(url.pathname, url.origin).href,
-});
+export const load: LayoutLoad = ({ url }) => {
+  return {
+    siteName: "AERIS Programming Language",
+    canonical: new URL(url.pathname, url.origin).href,
+  };
+};

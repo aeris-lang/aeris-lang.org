@@ -14,7 +14,9 @@
     "strict": true,
     "noUncheckedSideEffectImports": true,
     "resolveJsonModule": true,
+    "sourceMap": true,
     "esModuleInterop": true,
+    "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "skipLibCheck": true
