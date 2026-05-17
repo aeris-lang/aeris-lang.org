@@ -1,8 +1,7 @@
-import { includeIgnoreFile } from "@eslint/config-helpers";
+import { defineConfig, includeIgnoreFile } from "@eslint/config-helpers";
 import js from "@eslint/js";
 import prettier from "eslint-config-prettier";
 import svelte from "eslint-plugin-svelte";
-import { defineConfig } from "eslint/config";
 import globals from "globals";
 import path from "node:path";
 import ts from "typescript-eslint";
@@ -24,7 +23,7 @@ export default defineConfig(
     rules: { "no-undef": "off" },
   },
   {
-    files: ["**/*.svelte", "**/*.svelte.ts", "**/*.svelte.js"],
+    files: ["**/*.svelte", "**/*.svelte.ts"],
     languageOptions: {
       parserOptions: {
         projectService: true,
