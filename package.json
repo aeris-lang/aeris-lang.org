@@ -13,7 +13,6 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@eslint/config-helpers": "^0.6",
     "@eslint/js": "^10",
     "@sveltejs/adapter-static": "^3",
     "@sveltejs/kit": "^2",
