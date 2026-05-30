@@ -6,8 +6,8 @@
   import { faviconDark, faviconLight, profile } from "$lib/assets";
 
   const { children } = $props();
-  const title = $derived(`${page.data.title} — ${page.data.subtitle}`);
   const { siteName, description, robots, canonical } = $derived(page.data);
+  const title = $derived(`${page.data.title} — ${page.data.subtitle}`);
 </script>
 
 <svelte:head>
