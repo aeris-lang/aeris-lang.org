@@ -7,7 +7,7 @@ export const csr = true;
 
 export const load: LayoutLoad = ({ url }) => {
   return {
-    siteName: "AERIS Programming Language",
+    site_name: "AERIS Programming Language",
     canonical: new URL(url.pathname, url.origin).href,
   };
 };

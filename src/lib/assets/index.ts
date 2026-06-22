@@ -1,3 +1,3 @@
-export { default as faviconDark } from "./favicon/dark.svg";
-export { default as faviconLight } from "./favicon/light.svg";
+export { default as favicon_dark } from "./favicon/dark.svg";
+export { default as favicon_light } from "./favicon/light.svg";
 export { default as profile } from "./profile.webp?no-inline";
