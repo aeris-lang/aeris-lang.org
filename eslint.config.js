@@ -7,10 +7,10 @@ import path from "node:path";
 import ts from "typescript-eslint";
 import svelteConfig from "./svelte.config.js";
 
-const gitignorePath = path.resolve(import.meta.dirname, ".gitignore");
+const gitignore_path = path.resolve(import.meta.dirname, ".gitignore");
 
 export default defineConfig(
-  includeIgnoreFile(gitignorePath),
+  includeIgnoreFile(gitignore_path),
   js.configs.recommended,
   ts.configs.recommended,
   svelte.configs.recommended,
