@@ -3,17 +3,13 @@ import { sveltekit } from "@sveltejs/kit/vite";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 
-const ORIGIN = process.env["ORIGIN"] as
-  | `http://${string}`
-  | `https://${string}`;
-
 export default defineConfig({
   plugins: [
     tailwindcss(),
     sveltekit({
       adapter: adapter(),
-      prerender: { origin: ORIGIN },
-      paths: { assets: ORIGIN },
+      prerender: { origin: process.env["ORIGIN"]! },
+      paths: { assets: process.env["ORIGIN"] as "" },
     }),
   ],
 });
